@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 31 16:18:50 2019
+
+@author: ashab
+"""
+
+""" A list is a collection which is ordered and changeable. In Python lists are written with square brackets.
+ List allows duplicate members"""
+ 
+# Creating a list called fruits
+fruits = ['Apple', 'Orange', 'Banana', 'Kiwi', 'Mango', 'Pineapple',
+         'Strawberry', 'Blackberry', 'Blueberry', 'Grapes', 'Peach', 'Watermelon',
+         'Mango', 'Banana', 'Grapes']
+
+# sort() method is to sort the list
+(fruits.sort())
+
+# You can access the list items by referring to the index number
+fruits_pos2 = fruits[1]
+print (fruits_pos2) #Output is "Banana" since we sorted the list in the previous step
+
+# To change the value of a specific item, refer to the index number
+""" Changing the value "Banana" to "Apricots" """
+fruits[1] = "Apricots"
+
+# You can loop through the list items by using the FOR loop
+for x in fruits:
+    print (x)
+    
+# To determine if a specifies item is present in a list, use the IN keyword
+if "Avacado" in fruits:
+    print("'Mango' is present in the fruits list")
+#To add an item to the end of the list, use append() method
+else:
+    fruits.append("Avacado")
+    print (fruits)
+
+# To add an item in a specified index, use insert() method
+fruits.insert(1, "Cherry")
+print ( fruits)
+
+# TO determinne how many items a list has, use len() method    
+Total_item = (len(fruits))
+print (Total_item)
+
+#To remove a specific item from the list, use remove() method
+fruits.remove("Mango")
+
+#The pop() methos removes the specified index or the last item of the list if index is not specified
+fruits.pop(2)
+
+#The del keyword removes the specified index. The del keyword can also delete the list completely
+del fruits[5]
+
+""" 
+To delete the list completely
+del fruits
+"""
+
+# The clear() method empties the list
+fruits.clear()
+print(len(fruits))
+
+#It is possible to use list() constructor to make a list
+fruits = list(("Apple", "Banana", "Cherry"))
+print (fruits)
