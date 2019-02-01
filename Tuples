@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  1 10:31:57 2019
+
+@author: ashab
+"""
+
+# Tuples
+photography = ("Portrait", "Wedding", "Senior", "Boudoir", "Children", "Commercial","Maternity",
+               "Newborn", "Birth","Family")
+#To check the type of the variable photography
+print (type(photography))
+
+#The count() method returns the number of times a specified value appears in the tuple.
+BoudoirCount = photography.count("Boudoir")
+print(BoudoirCount)
+
+#The index() method finds the first occurrence of the specified value.
+BoudoirPos = photography.index("Boudoir")
+print (BoudoirPos)
+
+#The index() method raises an exception if the value is not found.
+#RealEstatePos = photography.index("RealEstate")
+#print (RealEstatePos)
+
+#To find the length of the tuple, use len() 
+print(len(photography))
+
+#To determine a specified value is present in a tuple, use in keyword
+if "Portrait" in photography:
+    print ("Portrait is found in the tuple")
+    
+#You can loop through the tuple using for loop
+for x in photography:
+    print(x)    
+    
+#You can access tuple items by referring to the index number, inside square brackets
+Pos3 = photography[3]
+print (Pos3)    
+    
+"""#Once the tuple is created, you cannot change value
+photography[3] = "RealEstate" """
+
+#you cannot remove items from tuples, but you can delete the tuple completely
+print (photography)
+del photography
