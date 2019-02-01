@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  1 10:31:59 2019
+
+@author: ashab
+"""
+
+#sets are unordered and unindexed and written in curly brackets.
+fruits = {"Apple", "Orange", "Banana"}
+print (type(fruits))
+for x in fruits:
+    print(x)
+    
+# To find specified value is present in the set, use in keyword    
+if "Banana" in fruits:
+    print ("Banana is a fruit")
+    
+#  To add one new item to the set, use add()     
+fruits.add("Apricots")
+
+# To add more than one item to the set, use update()
+fruits.update(["Strawberry", "Blueberry", "Blackberry"])
+
+# To find the length of the set, use len()
+print (len(fruits))
+
+# pop() will remove the last item in the set since set is unindexed
+lastpop = fruits.pop()
+print (lastpop)
+
+# To remove an item from the set, use remove() or discard()
+"""Remove() will raise an error if the specified value is not present in the set whereas discard() will not raise any error"""
+fruits.discard("Blackberry")
+fruits.remove("Pineapple")
+
+#Clear() method empties the value in a set
+fruits.clear()
+
+#del keyword deletes the set completely
+del fruits
