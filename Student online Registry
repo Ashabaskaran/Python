@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Jan 31 17:18:10 2019
+
+@author: ashab
+"""
+
+# Online student register
+#creating list using user input
+kids = []
+i = 1
+y = 0
+while i == 1 :
+    i = 0
+    x = (input("Enter Student name:").upper())
+# If the name entered by the user already exist, send the user a message and ask them if they want to proceed    
+    if x in kids:
+        print ("Student name already exist")
+        y = 1
+#If the entered name is not in the list, add the name to the list        
+    else:    
+        kids.append(x)
+        y = 1
+#This while loop is to check if the user want to proceed further or exit        
+    while y == 1:       
+        confirmation = input("Do you want to proceed(y/n)?").upper()
+        if confirmation =='Y':
+            y = 0
+            i = 1
+        elif confirmation =='N':
+            print ("Thank you!")
+            break
+        else:
+            print ("Invalid selection")
+            y = 1
