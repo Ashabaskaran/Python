@@ -1,0 +1,58 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb  1 15:48:49 2019
+
+@author: ashab
+"""
+
+# A Dictionary is a collection which is unordered, changable and indexed. It is written in curly brackets and it has key and value
+Cars = {"Model": "Civic",
+        "year" : 2001,
+        "Color" : "Blue",
+        "Make" : "Honda"}
+print (type(Cars))
+
+# Change value using key in the dictionary
+Cars["year"] = 2016
+print (Cars)
+
+# Access values using Keys
+print (Cars["Model"])
+
+#Also we can access values using get() function
+print (Cars.get("Model"))
+
+# When looping through the dictionary, the return values are keys of te dictionary
+for x in Cars:
+    print (x)
+    
+#Below is the method to return values using for loop
+for x in Cars:
+    print (Cars[x])
+    
+#items() will return the items(both key and value)    
+for x in Cars.items():
+    print (x)
+   
+#Values() will return the value of the dictionary   
+for x in Cars.values():
+     print (x)
+     
+#To add an item to the dictionary, create a new index key and assign a value to it     
+Cars["Type"] = "Sedan"
+print (Cars)   
+
+#The pop() method removes the item with the specified key name  
+Cars.pop("year")    
+
+#The popitem() removes the last inserted item
+Cars.popitem()
+
+#del() removes the item with the specified key name 
+del Cars["Make"]
+
+#Clear() method empties the dictionary
+Cars.clear()
+
+#Delete the dictionary completely
+del Cars
