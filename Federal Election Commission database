@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Feb  2 21:59:22 2019
+
+@author: ashab
+"""
+import pandas as pd
+
+# reading a csv file using pandas library
+fec = pd.read_csv('D:/PythonExercise/pydata-book-2nd-edition/pydata-book-2nd-edition/datasets/fec/P00000001-ALL.csv')
+print (type(fec))
+
+#To view the file details, use filename.info()
+print(fec.info())
+
+ # gives type of the field
+print(fec.iloc[0])
+
+
+# Fetching distinct candiate names using unique() keyword
+unique_cands = fec.cand_nm.unique()
+print('unique candidates', unique_cands)
+
+# Fetching the candiate name which is in index 2
+print(unique_cands[2])
+
+#creating a dictionary 'parties' with candiate name as key and their party name as value
+parties = {'Bachmann, Michelle' : 'Republican',
+           'Cain, Herman' : 'Republican',
+           'Gingrich, Newt' : 'Republican',
+           'Huntsman, Jon' : 'Republican',
+           'Johnson, GAry Earl' : 'Republican',
+           'McCotter, Thaddeus G' : 'Republican',
+           'Obama, Barack': 'Democrat',
+           'Paul, Ron' : 'Republican',
+           'Pawlenty, Timothy' : 'Republican',
+           'Perry, Rick' : 'Republican',
+           "Roemer, Charles E.'Buddy' III" : 'Republican',
+           'Romney, Mitt' : 'Republican',
+           'Santorum, Rick' : 'Republican'}
+print(parties)
+
+#Fetching candiate names that are present in the index from 123456 to 123461
+print(fec.cand_nm[123456:123461])
+
+# mapping the party name using parties dictionary to the selected candiates
+print(fec.cand_nm[123456:123461].map(parties))
+
+#Adding a new attribute called "party" to the file and mapping the values using candiate name as the key
+fec['party'] = fec.cand_nm.map(parties)
+print(fec)
+
+# Counting total number of distinct parties using value_counts()
+print(fec['party'].value_counts())
+
+#Taking counts on how many contributors made donation
+print((fec.contb_receipt_amt > 0).value_counts())
+
+#Overriding the file with records on who made the donations eliminating the records which has contribution amount as zero
+fec = fec[fec.contb_receipt_amt > 0]
+
+#Checking if 'Barack Obama' and 'Mitt Romney' are present in the updated file
+fec_mrbo = fec[fec.cand_nm.isin(['Obama, Barack', 'Romney, Mitt'])]
+
+
+
