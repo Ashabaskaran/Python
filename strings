@@ -1,0 +1,22 @@
+str_ls = []
+
+n = int(input())
+for i in range(n):
+    text_1 = input()
+    str_ls.append(text_1)
+
+even_index = []
+odd_index = []
+
+for i in range(0,len(str_ls)):
+    even_index.clear()
+    odd_index.clear()
+    
+    ip_value = str_ls[i]
+    
+    for j in range(0, len(ip_value)) :
+        if j % 2 == 0:
+            even_index.append(ip_value[j])
+        else:
+            odd_index.append(ip_value[j])
+    print (''.join(even_index) +' '+ ''.join(odd_index), end ='\n')    
